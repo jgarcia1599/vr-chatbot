@@ -9,9 +9,11 @@
     <div id="myEmbeddedScene">
         <a-scene background="color: #111111" embedded>
             <a-assets>
-            <a-asset-item id="person" src="https://cdn.glitch.com/615436db-1ab4-4094-bd42-208ebf855284%2Fdennis-posed-004.obj?v=1600865078497"></a-asset-item>
+            <a-asset-item id="person-0" src="/static/personmodel/personmodel.obj"></a-asset-item>
+            <a-asset-item id="person-m" src="/static/personmodel/personmodel.mtl"></a-asset-item>
+            <a-asset-item></a-asset-item>
         </a-assets>
-        <a-entity obj-model="obj: #person; mtl: #person"></a-entity>
+        <a-entity obj-model="obj: #person-0; mtl: #person-m"></a-entity>
         <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CD3D9" shadow></a-box>
         <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
         <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
