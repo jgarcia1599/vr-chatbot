@@ -7,17 +7,20 @@
   </head>
   <body>
     <div id="myEmbeddedScene">
-        <a-scene background="color: #111111" embedded>
+        <a-scene background="color: #111111" embedded debug>
             <a-assets>
-            <a-asset-item id="person-0" src="/static/personmodel/personmodel.obj"></a-asset-item>
-            <a-asset-item id="person-m" src="/static/personmodel/personmodel.mtl"></a-asset-item>
-            <a-asset-item></a-asset-item>
-        </a-assets>
-        <a-entity obj-model="obj: #person-0; mtl: #person-m"></a-entity>
-        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CD3D9" shadow></a-box>
-        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
-        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+              <a-asset-item id="person-0" src="/static/personmodel/personmodel.obj"></a-asset-item>
+              <a-asset-item id="person-m" src="/static/personmodel/personmodel.mtl"></a-asset-item>
+              <a-asset-item id="office-0" src="/static/house.obj"></a-asset-item>
+              <a-asset-item id="office-m" src="/static/house.mtl"></a-asset-item>
+              <img id="backgroundInsideHouse" crossorigin="anonymous" src="/static/sky.jpg">
+            </a-assets>
+            <!-- <a-camera position="2 1.2 5.3" listener></a-camera> -->
+            <a-camera position="2 1.6 6.3" listener></a-camera>
+        <a-sky id="background-img" src="#backgroundInsideHouse"></a-sky>
+        <a-entity position="1.5 0.1 4.5" obj-model="obj: #person-0; mtl: #person-m"></a-entity>
+        <a-entity position="0 0 -4" obj-model="obj: #office-0; mtl: #office-m"></a-entity>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#5ed1ff" shadow></a-plane>
         </a-scene>
     </div>
         <div id="chatboxcontainer" style="z-index: 1;">
@@ -30,6 +33,17 @@
             </div>
         </div>
       <script>
+        AFRAME.registerComponent('camera-listener', {
+          tick: function () {
+            var cameraEl = this.el.sceneEl.camera.el;
+            var cameraPosition = cameraEl.getAttribute('position');
+            cameraEl.getAttribute('rotation');
+
+            console.log(cameraPosition);
+
+            // Do something.
+          }
+});
         function getBotResponse() {
           var rawText = $("#textInput").val();
           var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
