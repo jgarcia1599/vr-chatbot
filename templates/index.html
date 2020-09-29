@@ -3,14 +3,15 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> 
+
   </head>
   <body>
     <div id="header">
       <h1>A.I.-miss-u</h1>
       <p><b>Instructions:</b> This is a prototype for A.I.-miss-u, a futuristic digital representation of your loved ones.</p>
       
-      <p><b>Backstory: </b> The year is 2050. Below you have Bob, our coworker who once went on a rant on the company's Whatsapp group chat about how much he hates city life and dreams about retiring in the woods in his family's mountain house. Using this rant (to be fair, it was quite a long one) we were able to recreate him below. Us the text box to send him a message or click on the VR button to see his dream mountain house.</p>
+      <p><b>Backstory: </b> The year is 2050. We were so bored with our jobs that we decided to buy this new gadget called AI-miss-u. We decided to test this toy out with Bob, our coworker who once went on a rant on the company's Whatsapp group chat about how much he hates city life and dreams of retiring in the woods in his family's mountain house. Using this rant (to be fair, it was quite a long one) we were able to recreate him below. Us the text box to send him a message or click on the VR button to see his dream mountain house.</p>
     </div>
     <div id="myEmbeddedScene">
         <a-scene background="color: #111111" embedded debug>
@@ -25,28 +26,42 @@
             <a-camera position="2 1.6 6.3" listener></a-camera>
         <a-sky id="background-img" src="#backgroundInsideHouse"></a-sky>
         <a-entity position="1.5 0.1 4.5" obj-model="obj: #person-0; mtl: #person-m"></a-entity>
+        <a-text modelresponse value="Hi, I'm Bob;" background="color: red" position="1.5 2 4.5"  width = "3" height = "2" scale="1.2 1.2 1.2"></a-text>
         <a-entity position="0 0 -4" obj-model="obj: #office-0; mtl: #office-m"></a-entity>
+          <!-- <a-entity obj-model="obj: #person-0; mtl: #person-m" scale="0.7 0.7 0.7" position="-1 0.5 -3"></a-entity>
+          <a-text modelresponse value="Hi, I'm Junior;" background="color: red" position="-0.7 1.7 -2.7" width = "3" height = "2" scale="1.2 1.2 1.2"></a-text> -->
         </a-scene>
+
     </div>
         <div id="chatboxcontainer" style="z-index: 1;">
-            <div id="chatbox">
+            <!-- <div id="chatbox">
                 <p class="botText"><span>Hi! I'm Bob.</span></p>
-            </div>
+            </div> -->
             <div id="userInput">
                 <input id="textInput" type="text" name="msg" placeholder="Message">
                 <input id="buttonInput" type="submit" value="Send">
             </div>
         </div>
       <script>
+        messageresponse = "Hi, I'm Bob!"
+        AFRAME.registerComponent('modelresponse', {
+          tick: function () {
+            var el = this.el;
+            el.setAttribute("value", messageresponse);
+          }
+        });
+
         function getBotResponse() {
           var rawText = $("#textInput").val();
-          var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+          // var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
           $("#textInput").val("");
-          $("#chatbox").append(userHtml);
+          // $("#chatbox").append(userHtml);
           document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
           $.get("/get", { msg: rawText }).done(function(data) {
-            var botHtml = '<p class="botText"><span>' + data + '</span></p>';
-            $("#chatbox").append(botHtml);
+            // var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            // $("#chatbox").append(botHtml);
+            console.log(data);
+            messageresponse = data;
             document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
             let speech = new SpeechSynthesisUtterance();
             speech.lang = "en-US";
@@ -72,3 +87,7 @@
       </script>
   </body>
 </html>
+<!-- 
+
+<a-entity obj-model="obj: #person-0; mtl: #person-m" scale="0.7 0.7 0.7" position="-1 0.5 -3"></a-entity>
+<a-text modelresponse value="Hi, I'm Junior;" background="color: red" position="-0.7 1.7 -2.7" width = "3" height = "2" scale="1.2 1.2 1.2"></a-text> -->
