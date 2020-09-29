@@ -4,19 +4,26 @@
     <link rel="stylesheet" type="text/css" href="/static/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
+
   </head>
   <body>
     <div id="myEmbeddedScene">
         <a-scene background="color: #111111" embedded>
             <a-assets>
-            <a-asset-item id="person" src="https://cdn.glitch.com/615436db-1ab4-4094-bd42-208ebf855284%2Fdennis-posed-004.obj?v=1600865078497"></a-asset-item>
-        </a-assets>
-        <a-entity obj-model="obj: #person; mtl: #person"></a-entity>
-        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CD3D9" shadow></a-box>
-        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
-        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+              <a-asset-item id="person" src="https://cdn.glitch.com/615436db-1ab4-4094-bd42-208ebf855284%2Fdennis-posed-004.obj?v=1600865078497"></a-asset-item>
+              <!-- <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item> -->
+          </a-assets>
+          <!-- <a-assets>
+            <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+          </a-assets> -->
+ 
+          <!-- <a-entity text-geometry="value: What's up"></a-entity> -->
+          <a-entity obj-model="obj: #person" scale="0.7 0.7 0.7" position="-1 0.5 -3"></a-entity>
+          <a-entity text="value: Hi, I'm Junior;" background="color: red" position="-1 1.7 -3" width = "8" height = "6" scale="3 3 3"></a-entity>
+          
         </a-scene>
+
     </div>
         <div id="chatboxcontainer" style="z-index: 1;">
             <div id="chatbox">
