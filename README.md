@@ -6,7 +6,8 @@ By Estelle Ocran and Junior Garcia
     <img src="ai-miss-u.png">
 </div>
 
-A digital representation of your loved ones. 
+A digital representation of your loved ones. <br><br>
+You can access the project <a href = "https://vr-chatbot.herokuapp.com/">here</a>
 
 ## Description
 
