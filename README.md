@@ -16,7 +16,7 @@ Using state-of-the-art AI algorithms, AI-miss-u takes in any of the following in
 
 ## Process and Implementation
 
-For our speculative design project, we wanted to make a prototype of the output AI-miss-u produces after being trained. As such, we use <a href="https://aframe.io/">A-Frame</a> to create a VR experience in the browser and <a href="https://chatterbot.readthedocs.io/en/stable/tutorial.html">Chatterbot</a>, a python library to create chatbots. As such, we used general html,css,javascript for our frontend and <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>, a Python web franework, for our backend.     
+For our speculative design project, we wanted to make a prototype of the output AI-miss-u produces after being trained. As such, we use <a href="https://aframe.io/">A-Frame</a> to create a VR experience in the browser and <a href="https://chatterbot.readthedocs.io/en/stable/tutorial.html">Chatterbot</a>, a python library to create chatbots, We used general html,css,javascript for our frontend and <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>, a Python web framework, for our backend.     
 
 In terms of the front end implementation, we leveraged Aframe and free 3D models on the internet to create the VR experience. We depended heavily on stackoverflow and the A-frame docs in order to code the Virtual Reality aspect of the project. As we both were new using this framework, we founded quite difficult to work around it. However, given its simplicity and minimalistic approach, we were still able to produce something tangible despite our hurdles.     
 
