@@ -1,4 +1,5 @@
 # AI-miss-u
+
 By Estelle Ocran and Junior Garcia
 
 <div align="center">
@@ -23,4 +24,4 @@ For the backend, we based our code heavily on this <a href="https://github.com/c
 
 ## Reflection and Evaluation
 
-All in all, we are happy we came up with a very minimal implementaton of AI-miss-u. Since we were both using technologies we were new with, it probably would have been nice to have more than one week in order to make prototype that is closer to what we envisioned the final product will look like.    
+All in all, we are happy we came up with a very minimal implementaton of AI-miss-u. Since we were both using technologies we were inexperienced with, it probably would have been nice to have more than one week in order to make a prototype that is closer to what we envisioned the final product will look like.    
