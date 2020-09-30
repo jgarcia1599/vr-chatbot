@@ -1,6 +1,10 @@
 # AI-miss-u
 By Estelle Ocran and Junior Garcia
 
+<div align="center">
+    <img src="artist.gif">
+</div>
+
 A digital representation of your loved ones. 
 
 ## Description
