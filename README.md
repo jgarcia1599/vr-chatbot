@@ -2,7 +2,7 @@
 By Estelle Ocran and Junior Garcia
 
 <div align="center">
-    <img src="artist.gif">
+    <img src="ai-miss-u.png">
 </div>
 
 A digital representation of your loved ones. 
